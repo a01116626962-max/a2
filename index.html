@@ -495,13 +495,15 @@ textarea.input { resize: vertical; min-height: 60px; }
 
 <script>
 /* =========================================================
-   Imparo — Friend Edition (v2.4-Friend) — Complete Isolation
+   Imparo — Friend Edition (v2.4.1-Friend) — Fixed USER_ID
    ========================================================= */
 (function () {
   'use strict';
 
   /* =========================================================
-     CONFIG — حساب صديقك (منفصل تمامًا)
+     CONFIG — حساب صديقك
+     USER_ID الآن يطابق قواعد Firestore في مشروع a222-912ce
+     ويشارك نفس المسار مع Ingester — البيانات متزامنة.
      ========================================================= */
   const FIREBASE_CONFIG = {
     apiKey:            "AIzaSyAViYDMBtjyUz8OrqlYQ2JmLroYNacEsGw",
@@ -511,7 +513,7 @@ textarea.input { resize: vertical; min-height: 60px; }
     messagingSenderId: "195818872560",
     appId:             "1:195818872560:web:e6e490067246a47f1b6c35"
   };
-  const USER_ID = "friend_imparo_a222_912ce_n4m8k2p7v9x3_admin";
+  const USER_ID = "ahmed_imparo_53eea_x7k9m2p4q8w3_admin";
 
   const SRS = (function () {
     const REVIEW_HOUR = 10;
@@ -1785,7 +1787,7 @@ textarea.input { resize: vertical; min-height: 60px; }
       setSync('online');
 
       const dictVerbsCount = Object.values(dict).filter(e => e && e.type === 'verb').length;
-      console.info('[Imparo v2.4-Friend] جاهز. USER_ID =', Store.getUid(),
+      console.info('[Imparo v2.4.1-Friend] جاهز. USER_ID =', Store.getUid(),
         '| الجمل:', sentences.length,
         '| مميزة:', sentences.filter(s => s.is_starred).length,
         '| أفعال يدوية:', verbs.length,
